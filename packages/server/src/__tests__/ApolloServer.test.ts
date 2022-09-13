@@ -141,9 +141,9 @@ describe('ApolloServer start', () => {
     });
     await expect(server.start()).rejects.toThrow('nope');
     expect(startupDidFail.mock.calls).toMatchInlineSnapshot(`
-      Array [
-        Array [
-          Object {
+      [
+        [
+          {
             "error": [Error: nope],
           },
         ],
@@ -205,9 +205,9 @@ describe('ApolloServer start', () => {
 
     expect(await server.executeHTTPGraphQLRequest(request))
       .toMatchInlineSnapshot(`
-      Object {
+      {
         "bodyChunks": null,
-        "completeBody": "{\\"errors\\":[{\\"message\\":\\"This data graph is missing a valid configuration. More details may be available in the server logs.\\",\\"extensions\\":{\\"code\\":\\"INTERNAL_SERVER_ERROR\\"}}]}
+        "completeBody": "{"errors":[{"message":"This data graph is missing a valid configuration. More details may be available in the server logs.","extensions":{"code":"INTERNAL_SERVER_ERROR"}}]}
       ",
         "headers": Map {
           "content-type" => "application/json",
@@ -218,9 +218,9 @@ describe('ApolloServer start', () => {
 
     expect(await server.executeHTTPGraphQLRequest(request))
       .toMatchInlineSnapshot(`
-      Object {
+      {
         "bodyChunks": null,
-        "completeBody": "{\\"errors\\":[{\\"message\\":\\"This data graph is missing a valid configuration. More details may be available in the server logs.\\",\\"extensions\\":{\\"code\\":\\"INTERNAL_SERVER_ERROR\\"}}]}
+        "completeBody": "{"errors":[{"message":"This data graph is missing a valid configuration. More details may be available in the server logs.","extensions":{"code":"INTERNAL_SERVER_ERROR"}}]}
       ",
         "headers": Map {
           "content-type" => "application/json",
